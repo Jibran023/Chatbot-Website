@@ -52,7 +52,7 @@ export const UserSignup = async (req:Request, res: Response, next: NextFunction)
             signed: true, // we will the sign whole cookie as well
         }) 
 
-        return res.status(201).json({message:"OK", id: user._id.toString()})
+        return res.status(200).json({message:"OK", name:user.name, email:user.email})
     } 
     catch (error) {
         console.log(error)
@@ -99,7 +99,7 @@ export const UserLogin = async (req:Request, res: Response, next: NextFunction) 
             signed: true, // we will the sign whole cookie as well
         }) 
 
-        return res.status(201).json({message:"OK", id: user._id.toString()}) // after all checks are passed
+        return res.status(201).json({message:"OK", name:user.name, email:user.email}) // after all checks are passed
     } 
     catch (error) {
         console.log(error)
